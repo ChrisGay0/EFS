@@ -36,7 +36,7 @@ public class WordCounterService {
 	 * Converts the individual characters returned by CharacterReader into a Map of words
 	 * @return Map<String, WordCount) containing the words
 	 */
-	private Map<String, WordCount> getMapOfWords(){
+	protected Map<String, WordCount> getMapOfWords(){
 		boolean endOfText = false;
 		String currentWord = "";
 		Map<String, WordCount> wordMap = new HashMap<String, WordCount>();
@@ -76,12 +76,12 @@ public class WordCounterService {
 	}
 	
 	/**
-	 * Converts the Map into a sorted List words by the number of times it occures and then alphabetically
+	 * Converts the Map into a sorted List words by the number of times it occurs and then alphabetically
 	 * For example 
 	 * @param wordMap
 	 * @return
 	 */
-	private List<WordCount> sortWords(Map<String, WordCount> wordMap){
+	protected List<WordCount> sortWords(Map<String, WordCount> wordMap){
 		List<WordCount> wordList = new ArrayList<WordCount>(wordMap.values());
 		
 		Collections.sort(wordList, new Comparator<WordCount>() {
